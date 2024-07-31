@@ -140,9 +140,7 @@
         <p class="text-glow">i love angel <3</p>
     </div>
 
-   
-
-    <audio id="backgroundMusic" autoplay loop>
+    <audio id="backgroundMusic" preload="auto" loop>
         <source src="xmpp.mp3" type="audio/mpeg">
     </audio>
 
@@ -157,21 +155,19 @@
                     blackScreen.style.display = 'none';
                 }, 1000);
 
-                fadeIn(backgroundMusic);
+                backgroundMusic.play();
             });
 
-            function fadeIn(element) {
-                element.volume = 0;
-                element.play();
+            backgroundMusic.addEventListener('play', function() {
                 let fadeInInterval = setInterval(function() {
-                    if (element.volume < 1) {
-                        element.volume += 0.1;
+                    if (backgroundMusic.volume < 1) {
+                        backgroundMusic.volume += 0.1;
                     } else {
                         clearInterval(fadeInInterval);
                     }
                 }, 200);
-            }
+            });
         });
     </script>
-    </body>
-    </html>
+</body>
+</html>
