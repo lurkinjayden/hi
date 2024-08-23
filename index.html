@@ -25,7 +25,7 @@
     <br>
     <br>
 
-    <div id="enter"><b class="begin">†</b></div>
+    <div id="enter" onclick="playMusic()"><b class="begin">†</b></div>
     <div id="main">
         <center>
             <h3>
@@ -78,10 +78,17 @@
     <iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe>
 
     <script src="typewriter.js"></script>
+    
+    <!-- Add the playMusic function to play audio on click -->
+    <script>
+        function playMusic() {
+            var audio = document.getElementById('audio');
+            audio.play();
+        }
+    </script>
 
-  
     <div id="rights" style="position: fixed; bottom: 10px; left: 50%; transform: translateX(-50%); font-family: Arial, sans-serif; font-size: 14px; color: #aaa;">
-    © All rights reserved 2024 (SouRce)
+        © All rights reserved 2024 (SouRce)
     </div>
 </body>
 </html>
